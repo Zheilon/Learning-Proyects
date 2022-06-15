@@ -1,7 +1,6 @@
 # ProInStudy
 Proyectos Realizados en Fase de Aprendizaje
+![813087](https://user-images.githubusercontent.com/104040670/173941685-3c13ed40-2943-4b4c-be34-d03b45589669.jpg)
 
-
-![Captura de pantalla 2022-06-15 164939](https://user-images.githubusercontent.com/104040670/173936007-9cf18b4e-b739-4073-9cd4-b187fe3f61fa.jpg)
 
 
