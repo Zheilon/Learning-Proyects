@@ -1,11 +1,14 @@
 # Caja de registro de Productos:
 
+os.system('cls')
+
 rocket_code = 0x1f680
 rocket_code = chr(rocket_code)
 
 ind = 0
 subtotal = 0
 while ind == 0:
+
     vp = int(input("Ingrese el valor unitario: "))
     vi = input("¿El producto cuenta con IVA?: ")
     rc = int(input("Ingrese la cantidad que lleva el cliente del producto a registrar: "))
@@ -29,7 +32,7 @@ while ind == 0:
 
         print('')
 
-    pc = input("¿Faltan productos por cobrar S/N?: \n")
+    pc = input("¿Faltan productos por cobrar S/N?: ")
     pc = pc.lower()
     if pc == "n":
         print(f"TOTAL A COBRAR: {subtotal}",rocket_code)
