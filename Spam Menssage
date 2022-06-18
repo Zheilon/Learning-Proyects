@@ -1,0 +1,16 @@
+# Codigo de repitición de mensajes:
+
+import time
+import pyautogui as spam
+
+ph = input('Ingrese la Frase: ')
+nm = int(input('Cantidad de Repeticiones: '))
+
+c = 0
+while c <= nm:
+
+    spam.typewrite(ph)
+    time.sleep(0.005)
+    spam.press('Enter')
+
+    c = c + 1
