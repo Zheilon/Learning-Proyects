@@ -1,0 +1,29 @@
+public class Cuenta {
+    public static void main (String[]args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("ingrese números: ");
+
+        double PETICION = 0, acum = 0;
+        int c = 0;
+        while (c <= 4) {
+
+            if (c == 1 | c == 2) {
+                PETICION = input.nextDouble();
+                PETICION = PETICION * 0.30;
+                acum = PETICION + acum;
+
+            } else if (c == 3 | c == 4) {
+                PETICION = input.nextDouble();
+                PETICION = PETICION * 0.20;
+                acum = PETICION + acum;
+            }
+
+            c ++;
+        }
+        System.out.println(acum);
+
+
+
+    }
+}
