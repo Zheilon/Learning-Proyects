@@ -1,0 +1,36 @@
+public class Config {
+    public static void main (String[]args) {
+        Scanner input = new Scanner (System.in);
+
+        int NUMERO;
+        int ac = 0;
+
+        System.out.print("¿Cuantos números va a operar?: ");
+        byte CANTIDAD = input.nextByte();
+
+        byte c = 0;
+        while (c < CANTIDAD) {
+
+            System.out.print("Ingrese numero: ");
+            NUMERO = input.nextInt();
+
+            System.out.print("Tipo de operación S / R / M / D: ");
+            String conf = input.next();
+
+            if (conf.equalsIgnoreCase("S")) {
+                ac += NUMERO;
+
+            } else if (conf.equalsIgnoreCase("R")) {
+                ac -= NUMERO;
+
+            } else if (conf.equalsIgnoreCase("M")) {
+                ac *= NUMERO;
+
+            } else if (conf.equalsIgnoreCase("D")) {
+                ac = ac / NUMERO;
+
+            }
+
+            c ++;
+        }
+        System.out.println("RESULTADO: " + ac);
