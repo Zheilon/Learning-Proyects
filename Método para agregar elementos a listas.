@@ -1,0 +1,49 @@
+public class Main {
+    static Scanner input = new Scanner(System.in);
+    static String [] listInt = new String[10];
+
+    //METODO ENFOCADO PARA AGREGAR ELEMENTOS.
+    static int listSpace() {
+        int incremental = 0;
+        for (String z : listInt) {
+            if (z != null) {
+                incremental ++;
+            }
+        }
+        return incremental;
+    }
+
+    public static void main(String[] args) {
+
+        boolean green_Flag = true;
+        while (green_Flag) {
+            System.out.println("Espacios Disponibles: " + (listInt.length - listSpace()));
+            System.out.print("Cantidad: ");
+            byte count = input.nextByte();
+
+            int space = listSpace() + count;
+
+            for (int i = 0; i < space; i ++) {
+                if (listInt[i] == null) {
+                    System.out.print("Dato N°" + (i + 1) + ": ");
+                    listInt[i] = input.next();
+                }
+            }
+
+            int c = input.nextInt();
+            if (c == 2) {
+                for (String i : listInt) {
+                    if (i != null) {
+                        System.out.println(i);
+                    }
+                }
+            }
+
+            int a = input.nextInt();
+            if (a == 1) {
+                green_Flag = false;
+            }
+        }
+
+    }
+}
