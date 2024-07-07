@@ -1,0 +1,24 @@
+#Encontrar letras y numeros con Codigo ASCII.
+public static void countChars(String word)
+    {
+        int num = 0, words = 0, may = 0;
+
+        for (int z = 0; z < word.length(); z ++) {
+            char character = word.charAt(z);
+            String string = String.valueOf(character);
+
+            if (string.equals(string.toUpperCase())) {
+                may ++;
+            }
+
+            for (char a = 48; a <= 57; a ++) {
+                if (character == a) {
+                    num ++;
+                }
+            }
+            for (char s = 65; s <= 120; s ++) {
+                if (character == s) {
+                    words ++;
+                }
+            }
+        }
