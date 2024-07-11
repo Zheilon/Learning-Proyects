@@ -1,0 +1,112 @@
+package Calculator;
+import Classes.AuxiliaryMethods;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Ctor extends JFrame {
+
+    AuxiliaryMethods auxiliaryMethods = new AuxiliaryMethods();
+    private JPanel root;
+    private JButton zeroButton;
+    private JTextField fieldOperation;
+    private JButton oneButton;
+    private JButton sumButton;
+    private JButton equalButton;
+    private JButton restButton;
+    private JButton multiplyButton;
+    private JButton divisionButton;
+    double secondN, firstN;
+    boolean sum = false, rest = false, multiply = false, division = false;
+
+    public JPanel getRoot () {return root;}
+
+    public Ctor ()
+    {
+        zeroButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                fieldOperation.setText(fieldOperation.getText() + "0");
+                requestFocus();
+            }
+        });
+
+        oneButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                fieldOperation.setText(fieldOperation.getText() + "1");
+                requestFocus();
+            }
+        });
+
+        sumButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                sum = true;
+                firstN = Double.parseDouble(fieldOperation.getText());
+                fieldOperation.setText("");
+            }
+        });
+
+        restButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                rest = true;
+                firstN = Double.parseDouble(fieldOperation.getText());
+                fieldOperation.setText("");
+            }
+        });
+
+        multiplyButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                multiply = true;
+                firstN = Double.parseDouble(fieldOperation.getText());
+                fieldOperation.setText("");
+            }
+        });
+
+        divisionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                division = true;
+                firstN = Double.parseDouble(fieldOperation.getText());
+                fieldOperation.setText("");
+            }
+        });
+
+        equalButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (sum) {
+                    secondN = Double.parseDouble(fieldOperation.getText());
+                    fieldOperation.setText(auxiliaryMethods.zeroNull(firstN + secondN));
+                    sum = false;
+
+                } else if (rest) {
+                    secondN = Double.parseDouble(fieldOperation.getText());
+                    fieldOperation.setText(auxiliaryMethods.zeroNull(firstN - secondN));
+                    rest = false;
+
+                } else if (multiply) {
+                    secondN = Double.parseDouble(fieldOperation.getText());
+                    fieldOperation.setText(auxiliaryMethods.zeroNull(firstN * secondN));
+                    multiply = false;
+
+                } else if (division) {
+                    secondN = Double.parseDouble(fieldOperation.getText());
+                    fieldOperation.setText(auxiliaryMethods.zeroNull(firstN / secondN));
+                    division = false;
+                }
+            }
+        });
+
+
+    }
