@@ -1,0 +1,62 @@
+public class Algorithms {
+
+    public static void main(String[] args)
+    {
+        String numbs = "49927398716";
+        String newNumbs = "";
+        //------------------------------------------
+        int [] listNumbs = new int[numbs.length()];
+        int [] list = new int[numbs.length()];
+        //------------------------------------------
+        int sum = 0;
+
+        // Invert;
+        for (int z = numbs.length() - 1; z >= 0; z --) {
+            String characterNum = String.valueOf(numbs.charAt(z));
+            newNumbs += characterNum;
+        }
+        //Multiply;
+        for (int z = 0; z < newNumbs.length(); z ++) {
+            String newSecondChar = String.valueOf(newNumbs.charAt(z));
+            int parseSecondChar = Integer.parseInt(newSecondChar);
+
+            if (z % 2 == 0) {
+                int multiply = parseSecondChar * 2;
+                listNumbs[z] = multiply;
+            }
+        }
+        //Condition number length;
+        String number = "";
+        for (int z = 0; z < listNumbs.length; z ++) {
+            if (listNumbs[z] != 0 && listNumbs[z] >= 10) {
+                number = String.valueOf(listNumbs[z]);
+
+                for (int i = 0; i < number.length(); i ++) {
+                    String character = String.valueOf(number.charAt(i));
+                    int parseCharacter = Integer.parseInt(character);
+                    sum += parseCharacter;
+                }
+                list[z] = sum;
+                sum = 0;
+            }
+        }
+        for (int i = 0; i < listNumbs.length; i ++) {
+            String character = String.valueOf(newNumbs.charAt(i));
+            if (i % 2 == 0) {
+                System.out.printf("%s * 2 =\t%d\t%d\n", character, listNumbs[i], list[i]);
+            } else {
+                System.out.printf("%s\t%d\t%d\n", character, listNumbs[i], list[i]);
+            }
+
+        }
+
+        int total = 0;
+        for (int z = 0; z < listNumbs.length; z ++) {
+            if (listNumbs[z] != 0 && list[z] != 0) {
+                total += (listNumbs[z] + list[z]);
+            }
+        }
+        System.out.println("-----");
+        System.out.printf("%4d", total);
+    }
+}
