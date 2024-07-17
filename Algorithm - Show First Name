@@ -1,0 +1,19 @@
+  private String cutName ()
+    {
+        String newName = "";
+        int position;
+        int whiteSpaces = 0;
+
+        for (int z = 0; z < headLine.length(); z ++) {
+            String character = String.valueOf(headLine.charAt(z));
+
+            if (character.equals(" ")) {
+                whiteSpaces ++;
+            }
+            if (character.equals(" ") && whiteSpaces == 1) {
+                position = z;
+                newName = headLine.substring(0, position);
+            }
+        }
+        return newName;  
+      }
