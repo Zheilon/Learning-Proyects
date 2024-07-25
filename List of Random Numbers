@@ -1,0 +1,32 @@
+public static void main(String[] args)
+{
+    Random random = new Random();
+    List<Long> list = new ArrayList<>();
+    String number = "";
+    long numbsInt = 0;
+
+    boolean flag = true;
+
+    for (int z = 0; z < 10; z ++) {
+        while (flag) {
+
+            for (int a = 0; a < 6; a ++) {
+                int n = random.nextInt(0, 10);
+                number += n;
+            }
+            numbsInt = Long.parseLong(number);
+
+            if (number.length() == 6 && numbsInt > 99999 && numbsInt < 1000000 && !list.contains(numbsInt)) {
+                list.add(numbsInt);
+                flag = false;
+
+            } else {
+                number = "";
+            }
+        }
+        flag = true;
+    }
+    Collections.sort(list);
+
+    System.out.println(list);
+}
