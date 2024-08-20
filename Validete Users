@@ -1,0 +1,42 @@
+public class Run {
+
+    static Scanner input = new Scanner(System.in);
+    static HashMap<String, String> hash = new HashMap<>();
+
+    public static void main(String[] args) {
+
+        System.out.print("Enter User: ");
+        String user = input.nextLine();
+
+        System.out.print("Enter PassWord: ");
+        String pass = input.next();
+
+        hash.put(user, pass);
+        validatePass(hash);
+    }
+
+    static void validatePass (HashMap<String, String> hash) {
+        int counter = 3;
+
+        while (counter > 0) {
+
+            System.out.print("Enter the password again: ");
+            String pass = input.next();
+
+            if (hash.containsValue(pass)) {
+                System.out.println("Contraseña Correcta :)");
+                break;
+
+            } else if (counter < 2) {
+                System.out.println("Vuelve Otro día ;)");
+                break;
+
+            }else {
+                counter --;
+                System.out.println("Attempts Remaining: " + counter);
+            }
+
+        }
+    }
+
+}
