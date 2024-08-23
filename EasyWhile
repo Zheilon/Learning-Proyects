@@ -1,0 +1,22 @@
+public class Main {
+
+    static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) { easyWhile(); }
+
+    public static void easyWhile()
+    {
+        while (true) {
+            String word = input.next();
+
+            if (word.equals("Java")) {
+                System.out.println("Correcto!");
+                break;
+
+            } else {
+                System.out.println("Sigue intentado!");
+            }
+        }
+    }
+
+}
